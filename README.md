@@ -1,4 +1,8 @@
-# Ngombe
+<div align="center">
+  <img src="src-tauri/icons/icon.png" width="128" height="128" alt="Ngombe Logo" />
+  <h1>Ngombe</h1>
+</div>
+
 
 **Ngombe** (javanese for *to drink*) is a lightweight desktop application designed to help you stay hydrated. Built with **Tauri 2.0**, it offers a distraction-free experience that lives in your system tray and keeps you on track with your daily water goals.
 

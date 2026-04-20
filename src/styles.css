@@ -433,8 +433,8 @@ body {
 /* ── Today's Log ────────────────────────────────────────────── */
 
 .today-log {
-  flex: 1;
-  min-height: 0;
+  flex: 1 0 auto;
+  min-height: 140px;
   display: flex;
   flex-direction: column;
 }

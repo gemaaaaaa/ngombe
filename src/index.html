@@ -1,143 +1,166 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Water Intake Tracker</title>
-    <script type="module" src="/main.js" defer></script>
-  </head>
 
-  <body>
-    <div class="app" id="app">
-      <!-- Header -->
-      <header class="header" id="header">
-        <div class="header-left">
-          <h1 class="app-title">💧 Hydrate</h1>
-          <span class="date" id="current-date"></span>
-        </div>
-        <button class="icon-btn" id="settings-toggle" title="Settings">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
-            <circle cx="12" cy="12" r="3"/>
-          </svg>
-        </button>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Ngombe - Water Tracker</title>
+  <script type="module" src="/main.js" defer></script>
+</head>
 
-      <!-- Settings Panel -->
-      <div class="settings-panel" id="settings-panel">
-        <div class="setting-row">
-          <label for="target-input">Daily Target</label>
-          <div class="setting-input-group">
-            <button class="stepper-btn" id="target-minus" title="Decrease target">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
-            <input type="number" id="target-input" value="2000" min="500" max="5000" step="100" />
-            <button class="stepper-btn" id="target-plus" title="Increase target">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
-            <span class="input-unit">ml</span>
-          </div>
-        </div>
-        <div class="setting-row">
-          <label for="reminder-input">Reminder Every</label>
-          <div class="setting-input-group">
-            <button class="stepper-btn" id="reminder-minus" title="Decrease interval">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
-            <input type="number" id="reminder-input" value="60" min="15" max="180" step="15" />
-            <button class="stepper-btn" id="reminder-plus" title="Increase interval">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </button>
-            <span class="input-unit">min</span>
-          </div>
-        </div>
-        <button class="btn-save" id="save-settings">Save Settings</button>
+<body>
+  <div class="app" id="app">
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="header-left">
+        <h1 class="app-title">Stay Hydrated!</h1>
+        <span class="date" id="current-date"></span>
       </div>
+      <button class="icon-btn" id="settings-toggle" title="Settings">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      </button>
+    </header>
 
-      <!-- Progress Ring -->
-      <section class="progress-section" id="progress-section">
-        <div class="progress-ring-container">
-          <svg class="progress-ring" width="180" height="180" viewBox="0 0 180 180">
-            <defs>
-              <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#00d4ff" />
-                <stop offset="100%" stop-color="#0088ff" />
-              </linearGradient>
-              <linearGradient id="ring-gradient-complete" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#00e676" />
-                <stop offset="100%" stop-color="#00c853" />
-              </linearGradient>
-            </defs>
-            <circle class="ring-bg" cx="90" cy="90" r="75" />
-            <circle class="ring-fill" id="ring-fill" cx="90" cy="90" r="75" />
-          </svg>
-          <div class="progress-text">
-            <span class="current-amount" id="current-amount">0</span>
-            <span class="target-amount">/ <span id="target-display">2000</span> ml</span>
-            <span class="percentage" id="percentage">0%</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Quick Add Buttons -->
-      <section class="quick-add" id="quick-add-section">
-        <div class="quick-add-grid">
-          <button class="add-btn" data-amount="150" id="add-150">
-            <span class="add-amount">150</span>
-            <span class="add-unit">ml</span>
-          </button>
-          <button class="add-btn" data-amount="250" id="add-250">
-            <span class="add-amount">250</span>
-            <span class="add-unit">ml</span>
-          </button>
-          <button class="add-btn" data-amount="300" id="add-300">
-            <span class="add-amount">300</span>
-            <span class="add-unit">ml</span>
-          </button>
-          <button class="add-btn" data-amount="500" id="add-500">
-            <span class="add-amount">500</span>
-            <span class="add-unit">ml</span>
-          </button>
-        </div>
-        <div class="custom-add">
-          <input type="number" id="custom-amount" placeholder="Custom amount..." min="1" max="2000" />
-          <button class="add-btn-custom" id="custom-add-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-              <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settings-panel">
+      <div class="setting-row">
+        <label for="target-input">Daily Target</label>
+        <div class="setting-input-group">
+          <button class="stepper-btn" id="target-minus" title="Decrease target">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
             </svg>
           </button>
-        </div>
-      </section>
-
-      <!-- Today's Log -->
-      <section class="today-log" id="today-log-section">
-        <div class="section-header">
-          <h2>Today's Log</h2>
-          <button class="undo-btn" id="undo-btn" title="Remove last entry">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"/>
+          <input type="number" id="target-input" value="2000" min="500" max="5000" step="100" />
+          <button class="stepper-btn" id="target-plus" title="Increase target">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
             </svg>
           </button>
+          <span class="input-unit">ml</span>
         </div>
-        <div class="log-list" id="log-list">
-          <div class="empty-state" id="empty-state">
-            <span>No entries yet. Start drinking! 💧</span>
-          </div>
+      </div>
+      <div class="setting-row">
+        <label for="reminder-input">Reminder Every</label>
+        <div class="setting-input-group">
+          <button class="stepper-btn" id="reminder-minus" title="Decrease interval">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </button>
+          <input type="number" id="reminder-input" value="60" min="15" max="180" step="15" />
+          <button class="stepper-btn" id="reminder-plus" title="Increase interval">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </button>
+          <span class="input-unit">min</span>
         </div>
-      </section>
-
-      <!-- Weekly Stats -->
-      <section class="weekly-section" id="weekly-section">
-        <h2>This Week</h2>
-        <div class="weekly-chart" id="weekly-chart"></div>
-      </section>
+      </div>
+      <button class="btn-save" id="save-settings">Save Settings</button>
     </div>
 
-    <!-- Toast -->
-    <div class="toast" id="toast"></div>
-  </body>
+    <!-- Progress Ring -->
+    <section class="progress-section" id="progress-section">
+      <div class="progress-ring-container">
+        <svg class="progress-ring" width="180" height="180" viewBox="0 0 180 180">
+          <defs>
+            <linearGradient id="ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00d4ff" />
+              <stop offset="100%" stop-color="#0088ff" />
+            </linearGradient>
+            <linearGradient id="ring-gradient-complete" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00e676" />
+              <stop offset="100%" stop-color="#00c853" />
+            </linearGradient>
+          </defs>
+          <circle class="ring-bg" cx="90" cy="90" r="75" />
+          <circle class="ring-fill" id="ring-fill" cx="90" cy="90" r="75" />
+        </svg>
+        <div class="progress-text">
+          <span class="current-amount" id="current-amount">0</span>
+          <span class="target-amount">/ <span id="target-display">2000</span> ml</span>
+          <span class="percentage" id="percentage">0%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Add Buttons -->
+    <section class="quick-add" id="quick-add-section">
+      <div class="quick-add-grid">
+        <button class="add-btn" data-amount="150" id="add-150">
+          <span class="add-amount">150</span>
+          <span class="add-unit">ml</span>
+        </button>
+        <button class="add-btn" data-amount="250" id="add-250">
+          <span class="add-amount">250</span>
+          <span class="add-unit">ml</span>
+        </button>
+        <button class="add-btn" data-amount="300" id="add-300">
+          <span class="add-amount">300</span>
+          <span class="add-unit">ml</span>
+        </button>
+        <button class="add-btn" data-amount="500" id="add-500">
+          <span class="add-amount">500</span>
+          <span class="add-unit">ml</span>
+        </button>
+      </div>
+      <div class="custom-add">
+        <input type="number" id="custom-amount" placeholder="Custom amount..." min="1" max="2000" />
+        <button class="add-btn-custom" id="custom-add-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Today's Log -->
+    <section class="today-log" id="today-log-section">
+      <div class="section-header">
+        <h2>Today's Log</h2>
+        <button class="undo-btn" id="undo-btn" title="Remove last entry">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7v6h6" />
+            <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13" />
+          </svg>
+        </button>
+      </div>
+      <div class="log-list" id="log-list">
+        <div class="empty-state" id="empty-state">
+          <span>No entries yet. Start drinking! 💧</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekly Stats -->
+    <section class="weekly-section" id="weekly-section">
+      <h2>This Week</h2>
+      <div class="weekly-chart" id="weekly-chart"></div>
+    </section>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+</body>
+
 </html>

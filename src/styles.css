@@ -53,10 +53,9 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 20px 22px 14px;
-  gap: 14px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  padding: 18px 22px 12px;
+  gap: 12px;
+  overflow: hidden;
 }
 
 .app::-webkit-scrollbar { width: 4px; }
@@ -461,10 +460,11 @@ body {
 /* ── Today's Log ────────────────────────────────────────────── */
 
 .today-log {
-  flex: 1 0 auto;
-  min-height: 140px;
+  flex: 1;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .section-header {
@@ -509,8 +509,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  min-height: 60px;
-  max-height: 130px;
+  min-height: 0;
 }
 
 .log-list::-webkit-scrollbar { width: 3px; }
@@ -577,7 +576,7 @@ body {
 
 .weekly-section {
   flex-shrink: 0;
-  padding-bottom: 6px;
+  padding-bottom: 2px;
 }
 
 .weekly-section h2 {

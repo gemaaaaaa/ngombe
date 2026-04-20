@@ -2,8 +2,6 @@
 
 **Ngombe** (javanese for *to drink*) is a lightweight desktop application designed to help you stay hydrated. Built with **Tauri 2.0**, it offers a distraction-free experience that lives in your system tray and keeps you on track with your daily water goals.
 
-## Getting Started
-
 ### Prerequisites
 
 - [Rust](https://www.rust-lang.org/tools/install)

@@ -39,9 +39,8 @@ src-tauri/binaries/
 
 # Local Data (Tauri Store)
 # We ignore all JSON files except the ones needed for the project structure
-*.json
-!package.json
-!package-lock.json
-!tauri.conf.json
-!capabilities/*.json
+**/*.json
+!/package.json
+!/package-lock.json
+!/src-tauri/tauri.conf.json
 !**/capabilities/*.json

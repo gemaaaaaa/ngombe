@@ -223,14 +223,14 @@ pub fn run() {
             let show_i =
                 MenuItem::with_id(app, "show", "Open Water Intake", true, None::<&str>)?;
             let sep1 = PredefinedMenuItem::separator(app)?;
-            let add_300_i =
-                MenuItem::with_id(app, "add_300", "Add 300ml", true, None::<&str>)?;
+            let add_350_i =
+                MenuItem::with_id(app, "add_350", "Add 350ml", true, None::<&str>)?;
             let sep2 = PredefinedMenuItem::separator(app)?;
             let quit_i = MenuItem::with_id(app, "quit", "Quit", true, None::<&str>)?;
 
             let menu = Menu::with_items(
                 app,
-                &[&show_i, &sep1, &add_300_i, &sep2, &quit_i],
+                &[&show_i, &sep1, &add_350_i, &sep2, &quit_i],
             )?;
 
             // ── Build Tray Icon ──
@@ -246,8 +246,8 @@ pub fn run() {
                             let _ = window.set_focus();
                         }
                     }
-                    "add_300" => {
-                        let _ = add_water_to_store(app, 300);
+                    "add_350" => {
+                        let _ = add_water_to_store(app, 350);
                         if let Some(window) = app.get_webview_window("main") {
                             let _ = window.emit("refresh-data", ());
                         }

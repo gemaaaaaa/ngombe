@@ -32,14 +32,26 @@
         <div class="setting-row">
           <label for="target-input">Daily Target</label>
           <div class="setting-input-group">
+            <button class="stepper-btn" id="target-minus" title="Decrease target">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
             <input type="number" id="target-input" value="2000" min="500" max="5000" step="100" />
+            <button class="stepper-btn" id="target-plus" title="Increase target">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
             <span class="input-unit">ml</span>
           </div>
         </div>
         <div class="setting-row">
           <label for="reminder-input">Reminder Every</label>
           <div class="setting-input-group">
+            <button class="stepper-btn" id="reminder-minus" title="Decrease interval">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
             <input type="number" id="reminder-input" value="60" min="15" max="180" step="15" />
+            <button class="stepper-btn" id="reminder-plus" title="Increase interval">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
             <span class="input-unit">min</span>
           </div>
         </div>

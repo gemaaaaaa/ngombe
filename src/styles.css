@@ -185,6 +185,34 @@ body {
   min-width: 24px;
 }
 
+.stepper-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.stepper-btn:hover {
+  background: var(--bg-card-hover);
+  color: var(--accent-1);
+  border-color: var(--border-hover);
+  box-shadow: 0 0 10px rgba(0, 180, 255, 0.1);
+  transform: scale(1.08);
+}
+
+.stepper-btn:active {
+  transform: scale(0.94);
+}
+
 .btn-save {
   background: var(--accent-gradient);
   border: none;

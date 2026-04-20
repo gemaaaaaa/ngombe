@@ -103,6 +103,32 @@ function setupEventListeners() {
       console.error("Failed to undo:", err);
     }
   });
+
+  // Stepper buttons for Daily Target
+  setupStepper("target-minus", "target-plus", "#target-input");
+
+  // Stepper buttons for Reminder Interval
+  setupStepper("reminder-minus", "reminder-plus", "#reminder-input");
+}
+
+// ── Stepper Helper ───────────────────────────────────────────
+function setupStepper(minusBtnId, plusBtnId, inputSelector) {
+  const input = $(inputSelector);
+  const step = parseInt(input.step) || 1;
+  const min = parseInt(input.min) || 0;
+  const max = parseInt(input.max) || Infinity;
+
+  $(`#${minusBtnId}`).addEventListener("click", () => {
+    const current = parseInt(input.value) || 0;
+    input.value = Math.max(min, current - step);
+    pulseButton($(`#${minusBtnId}`));
+  });
+
+  $(`#${plusBtnId}`).addEventListener("click", () => {
+    const current = parseInt(input.value) || 0;
+    input.value = Math.min(max, current + step);
+    pulseButton($(`#${plusBtnId}`));
+  });
 }
 
 // ── Core Actions ─────────────────────────────────────────────
